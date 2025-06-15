@@ -9,25 +9,32 @@ let posts = [{
 {
     "title": "My reasoning Behind this Stack",
     "image": "./images/stack.png",
-    "description" : "lorem",
+    "description" : "I considered vibe coding a really fancy website using React, NodeJS, Tailwindcss, and typescript. But then again i thougt it would be better to build the site from scratch. I did use docs and google but didn't use any AI to write the code for me. I did type all the code in here, so hope you like it :)",
     "author": "Bharath",
     "date": "15th June 2025",
-    "tags": ["#Me", "#Discussion", "#Filler"]
+    "tags": ["#Me", "#Discussion"]
 }]
 
-posts.forEach((post) => {
-    let blogpost = document.createElement("div");
-    blogpost.classList.add("blog-post");
-    let blogContent = document.createElement("div");
-    blogContent.classList.add("blog-content");
-    blogpost.appendChild(blogContent);
-    blogContent.innerHTML = `<div class="tags"><p class="tag">${post.tags.forEach((tag) => tag)}</p></div>
-    <h2>${post.title}</h2>
-    <p>${post.description}</p>
-    <div class="author"><em> - ${post.author}</em> • <i>${post.date}</i></div>`;
-    let postImg = document.createElement("div");
-    postImg.classList.add("post-img");
-    blogpost.appendChild(postImg);
-    postImg.innerHTML = `<img src="${post.image}">`;
-    document.querySelector("main").appendChild(blogpost);
-})
+
+function displayPosts(posts) {
+    for (post of posts) {
+        let blogPost = document.createElement("div");
+        blogPost.classList.add("blog-post");
+        blogPost.innerHTML = `
+            <div class="blog-content">
+                <div class="tags">
+                    ${post.tags.map(tag => `<p class="tag">${tag}</p>`).join("")}
+                </div>
+                <h2>${post.title}</h2>
+                <p>${post.description}</p>
+                <div class="author"><em> - ${post.author}</em> • <i>${post.date}</i></div>
+            </div>
+            <div class="post-img">
+                <img src="${post.image}">
+            </div>
+        `;
+        document.querySelector("main").appendChild(blogPost);
+    }
+}
+
+displayPosts(posts);

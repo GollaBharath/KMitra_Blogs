@@ -101,12 +101,12 @@ header img {
     flex-direction: column;
     gap: 1vh;
     justify-content: space-between;
-    max-width: 60vw;
+    max-width: 55vw;
 }
 
 .blog-post img {
     width: 20vw;
-    height: auto;
+    height: fit-content;
     border-radius: 1vh;
 }
 
