@@ -1,7 +1,7 @@
 let posts = [{
     "title": "Keshav Memorial Institute of Technology",
     "image": "./images/kmit_img.png",
-    "description" : "lorem",
+    "description" : "When was this image taken? Where are all the trees lol.",
     "author": "Bharath",
     "date": "15th June 2025",
     "tags": ["#KMIT", "#Filler", "#Trash"]
@@ -15,8 +15,12 @@ let posts = [{
     "tags": ["#Me", "#Discussion"]
 }]
 
-
 function displayPosts(posts) {
+    if (posts.length == 0) {
+        document.querySelector(".home").innerHTML = `
+            <h2>There are no posts yet.</h2>
+        `;
+    }
     for (post of posts) {
         let blogPost = document.createElement("div");
         blogPost.classList.add("blog-post");
@@ -33,8 +37,30 @@ function displayPosts(posts) {
                 <img src="${post.image}">
             </div>
         `;
-        document.querySelector("main").appendChild(blogPost);
+        document.querySelector(".home").appendChild(blogPost);
     }
 }
 
 displayPosts(posts);
+
+function newpost(){
+    form = document.querySelector(".newpost");
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        let title = document.querySelector("#title").value;
+        let image = document.querySelector("#image").value;
+        let description = document.querySelector("#description").value;
+        let author = document.querySelector("#author").value;
+        let date = document.querySelector("#date").value;
+        let tags = document.querySelector("#tags").value;
+        posts.push({
+            "title": title,
+            "image": image,
+            "description" : description,
+            "author": author,
+            "date": date,
+            "tags": tags.split(",")
+        });
+        form.reset();
+    });
+}

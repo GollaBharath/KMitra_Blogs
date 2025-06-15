@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/889ddb1a31.js" crossorigin="anonymous"></script>
+    <title>New Post</title>
+</head>
+<body>
+    <header>
+        <h1><i>Ropes&copy;</i></h1>
+        <div class="searchbar">
+            <form action="">
+                <input type="text" placeholder="Search Ropes">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><button class="create" onclick="window.location.href='index.html'"><i>Home</i></button></li>
+                <li><button><i class="fa-solid fa-bookmark"></i></button></li>
+                <li><button><i class="fa-solid fa-circle-user"></i></button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="./index.html" class="newpost">
+            <h2>New Post</h2>
+            <div class="inputs">
+                <label for="title">Title</label>
+                <input type="text" id="title" required>
+            </div>
+            <div class="inputs">
+                <label for="image">Image</label>
+                <input type="file" accept="image/*" id="image" required>
+            </div>
+            <div class="inputs">
+                <label for="description">Description</label>
+                <input type="text" id="description" required>
+            </div>
+            <div class="inputs">
+                <label for="author">Author</label>
+                <input type="text" id="author" required>
+            </div>
+            <div class="inputs">
+                <label for="date">Date</label>
+                <input type="date" id="date" required>
+            </div>
+            <div class="inputs">
+                <label for="tags">Tags</label>
+                <input type="text" id="tags" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+</html>
