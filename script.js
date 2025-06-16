@@ -29,7 +29,7 @@ function displayPosts(posts) {
                 <div class="tags">
                     ${post.tags.map(tag => `<p class="tag">${tag}</p>`).join("")}
                 </div>
-                <h2>${post.title}</h2>
+                <h2>${post.title}<button><i class="fa-solid fa-bookmark"></i></button></h2>
                 <p>${post.description}</p>
                 <div class="author"><em> - ${post.author}</em> • <i>${post.date}</i></div>
             </div>
@@ -44,23 +44,5 @@ function displayPosts(posts) {
 displayPosts(posts);
 
 function newpost(){
-    form = document.querySelector(".newpost");
-    form.addEventListener("submit", function(event) {
-        event.preventDefault();
-        let title = document.querySelector("#title").value;
-        let image = document.querySelector("#image").value;
-        let description = document.querySelector("#description").value;
-        let author = document.querySelector("#author").value;
-        let date = document.querySelector("#date").value;
-        let tags = document.querySelector("#tags").value;
-        posts.push({
-            "title": title,
-            "image": image,
-            "description" : description,
-            "author": author,
-            "date": date,
-            "tags": tags.split(",")
-        });
-        form.reset();
-    });
+    // create a new form in the db.
 }
