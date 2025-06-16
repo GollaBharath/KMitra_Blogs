@@ -47,6 +47,14 @@ header img {
     cursor: pointer;
 }
 
+.searchbar button:hover {
+    scale: 1.1;
+}
+
+.searchbar button:active {
+    scale: 1;
+}
+
 .navigation {
     color: white;
     display: flex;
@@ -88,6 +96,9 @@ header img {
     scale: 1.1;
 }
 
+.navigation ul li button:active {
+    scale: 1;
+}
 
 /* Blogs */
 
@@ -135,15 +146,19 @@ header img {
     font-size: 0.8em;
     font-weight: 600;
     width: fit-content;
-    background-color: royalblue;
+    background-color: rgb(223, 214, 255);
     padding: 0.5vh 1vw;
     border-radius: 1vh;
 }
 
 .blog-content .tag:hover {
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    scale: 1.1;
     cursor: pointer;
+}
+
+.blog-content .tag:active {
+    scale: 1;
 }
 
 .blog-content button {
@@ -158,6 +173,10 @@ header img {
 
 .blog-content button:hover {
     scale: 1.1;
+}
+
+.blog-content button:active {
+    scale: 1;
 }
 
 .blog-post img, .blog-content p, .blog-content .author, .blog-content h2 {
@@ -212,6 +231,7 @@ header img {
     text-align: center;
     text-decoration: solid;
     font-style: italic;
+    font-size: 3.5vh;
 }
 
 .newpost .inputs input {
@@ -220,6 +240,8 @@ header img {
     text-align: center;
     font-style: italic;
     outline: none;
+    font-size: 2.5vh;
+    font-weight: 400;
     padding: 0.5vh 1vw;
 }
 

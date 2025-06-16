@@ -45,4 +45,5 @@ displayPosts(posts);
 
 function newpost(){
     // create a new form in the db.
+    // i tried to do this using js posts array but realized why i cant do it :)  
 }
